@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.rcParams['font.family'] = ['SimHei']
 def greenhouse_gas_handle():
-    data = pd.read_csv("Greenhouse_Gas.csv")
+    data = pd.read_csv("Data_Source/Greenhouse_Gas.csv")
     data.info()
     data=data.drop('ISO2',axis=1)
     #可看出ISO2列无关数据分析可去除，其余数据均无缺失

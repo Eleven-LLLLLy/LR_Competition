@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 def Temp_handle():
-    data=pd.read_csv("Temp.csv")
+    data=pd.read_csv("Data_Source/Temp.csv")
     #ISO2、ISO3、Indicator等数据与本次数据无关则直接清除
     data = data.drop(['ISO2','ISO3','Indicator','Unit','Source','CTS_Code','CTS_Name','CTS_Full_Descriptor'], axis=1)
     data.info()

@@ -12,15 +12,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 def Energy_handle():
     '''数据处理，针对国家、类型进行分类，并选定特定年份'''
-    data=pd.read_csv('Energy_Transition.csv')
+    data=pd.read_csv('Data_Source/Energy_Transition.csv')
+    data.info()
     data=data.groupby('Country/Region')
     data=data.get_group('World')
+    '''使用Electricity Generation实际电力量进行计算'''
+    data =data.groupby('Indicator')
+    data = data.get_group('Electricity Installed Capacity')
     data=data.groupby('Energy_Type')
     data_renew=data.get_group('Total Renewable')
     data_Non_renew=data.get_group('Total Non-Renewable')
     data_renew=data_renew.loc[:,'F2010':'F2020']
     data_Non_renew = data_Non_renew.loc[:, 'F2010':'F2020']
-
     '''对数据进行统计'''
     x=np.array([2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020])
     non_renew_data=np.array(data_Non_renew.sum().values.tolist())
