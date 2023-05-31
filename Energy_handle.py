@@ -11,6 +11,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 def Energy_handle():
+    plt.rcParams['font.family'] = ['SimHei']
     '''数据处理，针对国家、类型进行分类，并选定特定年份'''
     data=pd.read_csv('Data_Source/Energy_Transition.csv')
     data.info()
@@ -55,3 +56,5 @@ def Energy_handle():
 
     # 显示图表
     plt.show()
+
+Energy_handle()

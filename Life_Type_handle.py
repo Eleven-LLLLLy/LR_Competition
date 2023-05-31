@@ -25,7 +25,9 @@ def handle_singlefile(path):
     #统计
     counts=data['gbif:isExtinct'].value_counts()
     percentages=(data['gbif:isExtinct'].value_counts(normalize=True)*100).reset_index()
+    print(percentages)
     percentage=percentages.iloc[2,1]
+    print(percentage)
     return percentage
 
 # 对多个文件进行处理得出图像
@@ -49,3 +51,4 @@ def Life_Type_handle():
 
     # 显示图形
     plt.show()
+Life_Type_handle()

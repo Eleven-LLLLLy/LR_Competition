@@ -32,12 +32,16 @@ def Forest_Cover():
     print(rate)
     '''
     绘制折线图
-    --森林占地面积比率折线图
+    --森林占地面积变化比率折线图
     '''
     plt.plot(names, rate)
+    plt.scatter(names,rate)
+
+    plt.fill_between(names, rate, alpha=0.2)
+    plt.ylim([0.3, 0.33])
     plt.xlabel('Year')
     plt.ylabel('Ratio of Forest Area to Total Area')
-    plt.title('Global Forest Area Ratio (1990-2020)')
+    plt.title('Global Forest Area Change Ratio (1990-2020)')
 
     # 显示图形
     plt.show()
